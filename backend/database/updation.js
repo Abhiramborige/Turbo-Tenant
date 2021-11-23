@@ -13,7 +13,7 @@ export function update_ownertable(object, query){
     console.log(result.affectedRows + " record(s) updated");
   });
 
-  export function update_TenantTable(object, query){
+export function update_TenantTable(object, query){
   var sql = "UPDATE TenantTable SET"
   for (const [key, value] of Object.entries(object)) {
     sql+=`${value} WHERE ${key} =`
@@ -27,7 +27,7 @@ export function update_ownertable(object, query){
   });
 
 
-  export function update_BookingTable(object, query){
+export function update_BookingTable(object, query){
   var sql = "UPDATE BookingTable SET"
   for (const [key, value] of Object.entries(object)) {
     sql+=`${value} WHERE ${key} =`
@@ -41,7 +41,7 @@ export function update_ownertable(object, query){
   });
 
 
-  export function update_HouseTable(object, query){
+export function update_HouseTable(object, query){
   var sql = "UPDATE HouseTable SET"
   for (const [key, value] of Object.entries(object)) {
     sql+=`${value} WHERE ${key} =`
@@ -55,7 +55,7 @@ export function update_ownertable(object, query){
   });
 
 
-  export function update_MembersTable(object, query){
+export function update_MembersTable(object, query){
   var sql = "UPDATE MembersTable SET"
   for (const [key, value] of Object.entries(object)) {
     sql+=`${value} WHERE ${key} =`
