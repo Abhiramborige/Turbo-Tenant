@@ -25,9 +25,13 @@ export function create_ownertable(){
 
 var sql = `
   CREATE TABLE TenantTable IF NOT EXISTS(n
-    name VARCHAR(255), 
-    address VARCHAR(255))
-  `;
+    Fisrt_name VARCHAR(255),
+    last_name VARCHAR(255), 
+    address VARCHAR(255),
+    email VARCHAR(50),
+    mobile_num INT(10),
+    occupation VARCHAR(20)
+  );
 con.query(sql, function (err, result) {
   if (err) throw err;
   console.log("TenantTable created");
@@ -35,8 +39,13 @@ con.query(sql, function (err, result) {
 
 var sql = `
   CREATE TABLE BookingTable IF NOT EXISTS(n
-    name VARCHAR(255), 
-    address VARCHAR(255))
+    Tenant_ID VARCHAR(255), 
+    House_ID VARCHAR(255),
+    Booking_date VARCHAR(255),
+    peroid VARCHAR(255),
+    price INT(10),
+    Agreement 
+    )
   `;
 con.query(sql, function (err, result) {
   if (err) throw err;
@@ -45,8 +54,17 @@ con.query(sql, function (err, result) {
 
 var sql = `
   CREATE TABLE HouseTable IF NOT EXISTS (n
-    name VARCHAR(255), 
-    address VARCHAR(255))
+    owner_name VARCHAR(255), 
+    No_of_rooms VARCHAR(255),
+    rate INT(50),
+    Upload_pics 
+    country VARCHAR(50),
+    state VARCHAR(50),
+    city VARCHAR(50),
+    address VARCHAR(50)
+    Description VARCHAR(255)
+
+    )
   `;
 con.query(sql, function (err, result) {
   if (err) throw err;
@@ -55,8 +73,14 @@ con.query(sql, function (err, result) {
 
 var sql = `
   CREATE TABLE MembersTable IF NOT EXISTS(n
-    name VARCHAR(255), 
-    address VARCHAR(255))
+    Tenant_ID VARCHAR(255), 
+    First_name VARCHAR(255),
+    Last_name VARCHAR(255),
+    occupation VARCHAR(255),
+    gender VARCHAR(20),
+    date_of_Birth 
+    relation_ship_with_tenant VARCHAR(50)
+    )
   `;
 con.query(sql, function (err, result) {
   if (err) throw err;
