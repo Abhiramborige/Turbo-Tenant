@@ -7,6 +7,7 @@ export function read_ownertable(){
     if (err) throw err;
     return result;
   });
+}
 
 export function read_TenantTable(){
   var sql="SELECT * FROM TenantTable";
@@ -14,6 +15,7 @@ export function read_TenantTable(){
     if (err) throw err;
     return result;
   });
+}
 
 export function read_BookingTable(){
   var sql="SELECT * FROM BookingTable";
@@ -21,6 +23,7 @@ export function read_BookingTable(){
     if (err) throw err;
     return result;
   });
+}
 
 
 export function read_HouseTable(){
@@ -29,6 +32,7 @@ export function read_HouseTable(){
     if (err) throw err;
     return result;
   });
+}
 
 export function read_MembersTable(){
   var sql="SELECT * FROM MembersTable";
@@ -36,13 +40,4 @@ export function read_MembersTable(){
     if (err) throw err;
     return result;
   });
-
-
-  
-  
-
-
 }
-
-
-// Please update for all tables these also accordingly
