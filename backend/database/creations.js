@@ -1,6 +1,6 @@
 import { con } from "./connection";
 
-export function create_ownertable(){
+export function create_ownertable() {
   var sql = `
     CREATE TABLE OwnerTable IF NOT EXISTS (n
       name VARCHAR(50), 
@@ -20,7 +20,7 @@ export function create_ownertable(){
   });
 }
 
-export function create_tenanttable(){
+export function create_tenanttable() {
   var sql = `
     CREATE TABLE TenantTable IF NOT EXISTS(n
       first_name VARCHAR(255),
@@ -36,7 +36,7 @@ export function create_tenanttable(){
   });
 }
 
-export function create_bookingtable(){
+export function create_bookingtable() {
   var sql = `
     CREATE TABLE BookingTable IF NOT EXISTS(n
       tenant_id VARCHAR(255), 
@@ -44,7 +44,7 @@ export function create_bookingtable(){
       dooking_date VARCHAR(255),
       peroid VARCHAR(255),
       price INT(10),
-      agreement 
+      agreement LONGBLOB
       )
     `;
   con.query(sql, function (err, result) {
@@ -53,19 +53,18 @@ export function create_bookingtable(){
   });
 }
 
-export function create_housetable(){
+export function create_housetable() {
   var sql = `
     CREATE TABLE HouseTable IF NOT EXISTS (n
       owner_name VARCHAR(255), 
       No_of_rooms VARCHAR(255),
       rate INT(50),
-      Upload_pics 
+      image LONGBLOB 
       country VARCHAR(50),
       state VARCHAR(50),
       city VARCHAR(50),
       address VARCHAR(50)
-      Description VARCHAR(255)
-
+      description VARCHAR(255)
       )
     `;
   con.query(sql, function (err, result) {
@@ -74,7 +73,7 @@ export function create_housetable(){
   });
 }
 
-export function create_memberstable(){
+export function create_memberstable() {
   var sql = `
     CREATE TABLE MembersTable IF NOT EXISTS(n
       Tenant_ID VARCHAR(255), 

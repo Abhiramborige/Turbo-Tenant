@@ -1,10 +1,10 @@
 import { con } from "./connection";
 
-export function insert_into_ownertable(object){
-  var sql = "INSERT INTO OwnerTable VALUES ?";      
+export function insert_into_ownertable(object) {
+  var sql = "INSERT INTO OwnerTable VALUES ?";
   var values = [
     [
-      object.name, 
+      object.name,
       object.email,
       object.password,
       object.mobile_num,
@@ -13,7 +13,7 @@ export function insert_into_ownertable(object){
       object.country,
       object.state,
       object.city,
-      object.address
+      object.address,
     ],
   ];
   con.query(sql, [values], function (err, result) {
@@ -22,17 +22,16 @@ export function insert_into_ownertable(object){
   });
 }
 
-
-export function insert_into_tenanttable(object){
+export function insert_into_tenanttable(object) {
   var sql = "INSERT INTO TenantTable VALUES ?";
   var values = [
     [
-      object.first_name, 
+      object.first_name,
       object.last_name,
       object.email,
       object.password,
       object.mobile_num,
-      object.occupation
+      object.occupation,
     ],
   ];
   con.query(sql, [values], function (err, result) {
@@ -41,16 +40,16 @@ export function insert_into_tenanttable(object){
   });
 }
 
-export function insert_into_bookingtable(object){
+export function insert_into_bookingtable(object) {
   var sql = "INSERT INTO BookingTable VALUES ?";
   var values = [
-      [
-      object.tenant_id, 
+    [
+      object.tenant_id,
       object.house_id,
       object.booking_date,
       object.peroid,
       object.price,
-      object.agreement
+      object.agreement,
     ],
   ];
   con.query(sql, [values], function (err, result) {
@@ -59,20 +58,20 @@ export function insert_into_bookingtable(object){
   });
 }
 
-export function insert_into_housetable(object){
+export function insert_into_housetable(object) {
   var sql = "INSERT INTO HouseTable VALUES ?";
   var values = [
     [
-        object.owner_id, 
-        object.no_of_rooms,
-        object.rate,
-        object.upload_pics,
-        object.country,
-        object.state,
-        object.city,
-        object.address,
-        object.description
-      ],
+      object.owner_id,
+      object.no_of_rooms,
+      object.rate,
+      object.upload_pics,
+      object.country,
+      object.state,
+      object.city,
+      object.address,
+      object.description,
+    ],
   ];
   con.query(sql, [values], function (err, result) {
     if (err) throw err;
@@ -80,18 +79,18 @@ export function insert_into_housetable(object){
   });
 }
 
-export function insert_into_memberstable(object){
+export function insert_into_memberstable(object) {
   var sql = "INSERT INTO MembersTable VALUES ?";
   var values = [
     [
-        object.tenant_id, 
-        object.first_name,
-        object.last_name,
-        object.occupation,
-        object.gender,
-        object.date_of_birth,
-        object.relationship_with_tenant
-      ],
+      object.tenant_id,
+      object.first_name,
+      object.last_name,
+      object.occupation,
+      object.gender,
+      object.date_of_birth,
+      object.relationship_with_tenant,
+    ],
   ];
   con.query(sql, [values], function (err, result) {
     if (err) throw err;

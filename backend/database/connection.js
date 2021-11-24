@@ -1,10 +1,10 @@
-require('dotenv').config()
+require("dotenv").config();
 var mysql = require("mysql");
 const PASSWORD = process.env.PASSWORD;
 
 var con = mysql.createConnection({
   host: "localhost",
-  user: 'root',
+  user: "root",
   password: PASSWORD,
 });
 
@@ -20,5 +20,4 @@ con.query(
     console.log("Database created");
   }
 );
-con.end()
-
+con.end();
