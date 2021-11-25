@@ -1,6 +1,8 @@
-import { con } from "./connection";
+const con = require("../database/config");
 
-export function insert_into_ownertable(object) {
+function insert_into_ownertable(req, res, next, object) {
+  // var object=req.heaaders['data'];
+  console.log(req.headers)
   var sql = "INSERT INTO OwnerTable VALUES ?";
   var values = [
     [
@@ -17,12 +19,18 @@ export function insert_into_ownertable(object) {
     ],
   ];
   con.query(sql, [values], function (err, result) {
-    if (err) throw err;
-    console.log("Number of records inserted: " + result.affectedRows);
+    if (err) {
+      console.log(err.message);
+      next(err);
+    }
+    else{
+      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      console.log("Number of records inserted: " + result.affectedRows);
+    }
   });
 }
 
-export function insert_into_tenanttable(object) {
+function insert_into_tenanttable(req, res, next, object) {
   var sql = "INSERT INTO TenantTable VALUES ?";
   var values = [
     [
@@ -35,12 +43,18 @@ export function insert_into_tenanttable(object) {
     ],
   ];
   con.query(sql, [values], function (err, result) {
-    if (err) throw err;
-    console.log("Number of records inserted: " + result.affectedRows);
+    if (err) {
+      console.log(err.message);
+      next(err);
+    }
+    else{
+      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      console.log("Number of records inserted: " + result.affectedRows);
+    }
   });
 }
 
-export function insert_into_bookingtable(object) {
+function insert_into_bookingtable(req, res, next, object) {
   var sql = "INSERT INTO BookingTable VALUES ?";
   var values = [
     [
@@ -53,12 +67,18 @@ export function insert_into_bookingtable(object) {
     ],
   ];
   con.query(sql, [values], function (err, result) {
-    if (err) throw err;
-    console.log("Number of records inserted: " + result.affectedRows);
+    if (err) {
+      console.log(err.message);
+      next(err);
+    }
+    else{
+      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      console.log("Number of records inserted: " + result.affectedRows);
+    }
   });
 }
 
-export function insert_into_housetable(object) {
+function insert_into_housetable(req, res, next, object) {
   var sql = "INSERT INTO HouseTable VALUES ?";
   var values = [
     [
@@ -74,12 +94,18 @@ export function insert_into_housetable(object) {
     ],
   ];
   con.query(sql, [values], function (err, result) {
-    if (err) throw err;
-    console.log("Number of records inserted: " + result.affectedRows);
+    if (err) {
+      console.log(err.message);
+      next(err);
+    }
+    else{
+      console.log("Number of records inserted: " + result.affectedRows);
+      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+    }
   });
 }
 
-export function insert_into_memberstable(object) {
+function insert_into_memberstable(req, res, next, object) {
   var sql = "INSERT INTO MembersTable VALUES ?";
   var values = [
     [
@@ -93,7 +119,21 @@ export function insert_into_memberstable(object) {
     ],
   ];
   con.query(sql, [values], function (err, result) {
-    if (err) throw err;
-    console.log("Number of records inserted: " + result.affectedRows);
+    if (err) {
+      console.log(err.message);
+      next(err);
+    }
+    else{
+      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      console.log("Number of records inserted: " + result.affectedRows);
+    }
   });
 }
+
+module.exports = {
+  insert_into_ownertable,
+  insert_into_tenanttable,
+  insert_into_bookingtable,
+  insert_into_bookingtable,
+  insert_into_memberstable,
+};

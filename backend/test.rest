@@ -1,0 +1,15 @@
+GET http://localhost:3000/database/insert_into_tenanttable
+Content-Type: application/json
+
+{
+  "name":"Abhiram",
+  "email":"abhi@ram.com",
+  "password":"12345",
+  "mobile_num":8697869786,
+  "occupation":"Student",
+  "num_houses":4,
+  "country":"India",
+  "state":"Karnataka",
+  "city":"Mangalore",
+  "address":"Plot 123, Streep of temple.",
+}
