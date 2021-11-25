@@ -2,11 +2,8 @@
 .container {
   margin-top: 8%;
   margin-left: 8%;
-  background-color:tomato;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  margin-right: 150px;
-  margin-left: 450px;
+  background-color:lightpink;
+  
   width:28rem; border-radius: 55px;
 }
 .card:hover {
