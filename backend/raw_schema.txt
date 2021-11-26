@@ -1,3 +1,4 @@
+// OWNER
 {
   name:"Abhiram",
   email:"abhi@ram.com",
@@ -9,4 +10,17 @@
   state:"Karnataka",
   city:"Mangalore",
   address:"Plot 123, Streep of temple.",
+}
+
+// HOUSE
+{
+  "owner_name":"Abhiram",
+  "no_of_rooms":2,
+  "rate":4,
+  "image":"https://picsum.photos/300",
+  "country":"India",
+  "state":"Karnataka",
+  "city":"Mangalore",
+  "address":"Plot 123, Streep of temple.",
+  "description":"Good house"
 }

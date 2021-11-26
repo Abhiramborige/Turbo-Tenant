@@ -26,32 +26,32 @@
               <b>Tenant Sign Up Here</b>
             </h1>
             <br />
-            <form name="Form2" action="tenantsignup.php" method="get">
+            <form name="Form2" action="http://localhost:3000/database/insert_into_tenanttable" method="post" enctype='application/json'>
               <table>
                 <tr>
                   <td><b>First Name: </b></td>
-                  <td><input type="textbox" name="f" value="" size="25" /></td>
+                  <td><input type="textbox" name="first_name" value="" size="25" /></td>
                 </tr>
                 <tr>
                   <td><b>Last Name: </b></td>
-                  <td><input type="textbox" name="l" value="" size="25" /></td>
+                  <td><input type="textbox" name="last_name" value="" size="25" /></td>
                 </tr>
                 <tr>
                   <td><b>Email: </b></td>
-                  <td><input type="email" name="e" value="" size="25" /></td>
+                  <td><input type="email" name="email" value="" size="25" /></td>
                 </tr>
                 <tr>
                   <td><b>Password: </b></td>
-                  <td><input type="password" name="p" value="" size="25" /></td>
+                  <td><input type="password" name="password" value="" size="25" /></td>
                 </tr>
                 <tr></tr>
                 <tr>
                   <td><b>Mobile No: </b></td>
-                  <td><input type="number" name="m" value="" size="25" /></td>
+                  <td><input type="number" name="mobile_num" value="" size="25" /></td>
                 </tr>
                 <tr>
                   <td><b>Occupation: </b></td>
-                  <td><input type="textbox" name="o" value="" size="25" /></td>
+                  <td><input type="textbox" name="occupation" value="" size="25" /></td>
                 </tr>
               </table>
               <br /><br />

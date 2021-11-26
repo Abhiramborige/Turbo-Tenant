@@ -2,6 +2,12 @@ require("dotenv").config();
 const PASSWORD = process.env.PASSWORD;
 const mysql = require("mysql");
 
+var start_con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: PASSWORD,
+});
+
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -9,4 +15,4 @@ var con = mysql.createConnection({
   database: "Turbotenant"
 });
 
-module.exports=con;
+module.exports={start_con,con};

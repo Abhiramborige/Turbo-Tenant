@@ -1,8 +1,8 @@
-const con = require("../database/config");
+const {start_con} = require("../database/config");
 const router = require("express").Router();
 
 let status_connected=0;
-con.connect(function (err) {
+start_con.connect(function (err) {
   if (err) {
     status_connected=0
     console.log(err.message);
@@ -19,7 +19,7 @@ const connect = (req, res) => {
     `);
   }
   else{
-    con.query(
+    start_con.query(
       "CREATE DATABASE IF NOT EXISTS TurboTenant;",
       function (err, result) {
         if (err) {
@@ -30,7 +30,7 @@ const connect = (req, res) => {
                 `);
         } else {
           console.log("Database created");
-          con.query("use TurboTenant;", function (err) {
+          start_con.query("use TurboTenant;", function (err) {
             if (err) {
               res.status(500).send(`
                     Unable to connect to database 😕<br>

@@ -1,4 +1,4 @@
-const con = require("../database/config");
+const {con} = require("../database/config");
 
 function update_ownertable(req, res, next, object, query) {
   var sql = "UPDATE OwnerTable SET";

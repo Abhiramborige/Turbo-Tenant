@@ -1,4 +1,4 @@
-const con = require("../database/config");
+const {con} = require("../database/config");
 
 function read_ownertable(req, res, next) {
   var sql = "SELECT * FROM OwnerTable";
@@ -40,14 +40,14 @@ function read_bookingtable(req, res, next) {
 }
 
 function read_housetable(req, res, next) {
-  var sql = "SELECT * FROM HouseTable";
+  var sql = "SELECT * FROM HouseTable;";
   con.query(sql, function (err, result, fields) {
     if (err) {
       console.log(err.message);
       next(err);
     }
     else{
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      res.render("all_houses", {result:result})
     }
   });
 }

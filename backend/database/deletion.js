@@ -1,1 +1,1 @@
-const con = require("../database/config");
+const {con} = require("../database/config");

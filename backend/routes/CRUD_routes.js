@@ -10,6 +10,7 @@ const {
   insert_into_tenanttable,
   insert_into_bookingtable,
   insert_into_memberstable,
+  insert_into_housetable,
 } = require("../database/insertions");
 const {
   read_ownertable,
@@ -27,17 +28,22 @@ const {
 } = require("../database/updation");
 const router = require("./connection");
 
-router.get("/create_ownertable", create_ownertable);
-router.get("/create_tenanttable", create_tenanttable);
-router.get("/create_bookingtable", create_bookingtable);
-router.get("/create_housetable", create_housetable);
-router.get("/create_memberstable", create_memberstable);
+function create(req, res, next){
+  create_bookingtable(req, res, next);
+  create_housetable(req, res, next);
+  create_memberstable(req, res, next);
+  create_ownertable(req, res, next);
+  create_tenanttable(req, res, next);
+  res.status(200).send("All tables created 🥳!<br>")
+}
 
-router.get("/insert_into_ownertable", insert_into_ownertable());
-router.get("/insert_into_tenanttable", insert_into_tenanttable);
-router.get("/insert_into_bookingtable", insert_into_bookingtable);
-router.get("/insert_into_bookingtable", insert_into_bookingtable);
-router.get("/insert_into_memberstable", insert_into_memberstable);
+router.get("/create_all_tables", create);
+
+router.post("/insert_into_ownertable", insert_into_ownertable);
+router.post("/insert_into_tenanttable", insert_into_tenanttable);
+router.post("/insert_into_bookingtable", insert_into_bookingtable);
+router.post("/insert_into_housetable", insert_into_housetable);
+router.post("/insert_into_memberstable", insert_into_memberstable);
 
 router.get("/read_ownertable", read_ownertable);
 router.get("/read_tenanttable", read_tenanttable);

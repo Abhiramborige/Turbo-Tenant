@@ -3,11 +3,14 @@ var mysql = require("mysql");
 const express = require("express");
 const app = express();
 const port = process.env.PORT;
+var bodyParser = require('body-parser')
 
 const connect_route = require("./routes/connection");
 const crud_routes=require("./routes/CRUD_routes")
 
-
+app.set("view engine","ejs");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use("/", connect_route);
 app.use("/database", crud_routes);
 app.use(function (err, req, res, next) {

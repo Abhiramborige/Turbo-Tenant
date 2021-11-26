@@ -76,22 +76,22 @@
           <br />
           <form
             name="Form2"
-            action="addhouse.php"
-            method="get"
-            enctype="multipart/form-data"
+            action="http://localhost:3000/database/insert_into_housetable"
+            method="POST",
+            enctype='application/json'
           >
             <table>
               <tr>
-                <td><b>Owner ID: </b></td>
-                <td><input type="number" name="o" value="" size="25" /></td>
+                <td><b>Owner Name: </b></td>
+                <td><input type="text" name="owner_name" value="" /></td>
               </tr>
               <tr>
                 <td><b>No of Rooms: </b></td>
-                <td><input type="number" name="n" value="" size="25" /></td>
+                <td><input type="number" name="no_of_rooms" value="" size="25" /></td>
               </tr>
               <tr>
                 <td><b>Rate: </b></td>
-                <td><input type="number" name="ra" value="" size="35" /></td>
+                <td><input type="number" name="rate" value="" size="35" /></td>
               </tr>
               <tr>
                 <td><b>Upload Pics: </b></td>
@@ -107,11 +107,11 @@
               </tr>
               <tr>
                 <td><b>Country: </b></td>
-                <td><input type="textbox" name="c" value="" size="25" /></td>
+                <td><input type="textbox" name="country" value="" size="25" /></td>
               </tr>
               <tr>
                 <td><b>State: </b></td>
-                <td><input type="textbox" name="s" value="" size="25" /></td>
+                <td><input type="textbox" name="state" value="" size="25" /></td>
               </tr>
               <tr>
                 <td><b>City: </b></td>
@@ -119,11 +119,11 @@
               </tr>
               <tr>
                 <td><b>Address: </b></td>
-                <td><input type="textbox" name="a" value="" size="25" /></td>
+                <td><input type="textbox" name="address" value="" size="25" /></td>
               </tr>
               <tr>
                 <td><b>Description: </b></td>
-                <td><input type="textbox" name="de" value="" size="25" /></td>
+                <td><input type="textbox" name="description" value="" size="25" /></td>
               </tr>
             </table>
             <br /><br />

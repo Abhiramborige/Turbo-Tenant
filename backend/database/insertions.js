@@ -1,24 +1,24 @@
-const con = require("../database/config");
+const {con} = require("../database/config");
+const remove_line_break = require("../utility/utility");
 
-function insert_into_ownertable(req, res, next, object) {
-  // var object=req.heaaders['data'];
-  console.log(req.headers)
-  var sql = "INSERT INTO OwnerTable VALUES ?";
-  var values = [
-    [
-      object.name,
-      object.email,
-      object.password,
-      object.mobile_num,
-      object.occupation,
-      object.num_houses,
-      object.country,
-      object.state,
-      object.city,
-      object.address,
-    ],
-  ];
-  con.query(sql, [values], function (err, result) {
+function insert_into_ownertable(req, res, next) {
+  var object=req.body;
+  var sql = `
+  INSERT INTO OwnerTable VALUES(
+    '${object.name}',
+    '${object.email}',
+    '${object.password}',
+    '${object.mobile_num}',
+    '${object.occupation}',
+    '${object.num_houses}',
+    '${object.country}',
+    '${object.state}',
+    '${object.city}',
+    '${object.address}'
+  );
+  `;
+  sql=remove_line_break(sql)
+  con.query(sql, function (err, result) {
     if (err) {
       console.log(err.message);
       next(err);
@@ -30,19 +30,20 @@ function insert_into_ownertable(req, res, next, object) {
   });
 }
 
-function insert_into_tenanttable(req, res, next, object) {
-  var sql = "INSERT INTO TenantTable VALUES ?";
-  var values = [
-    [
-      object.first_name,
-      object.last_name,
-      object.email,
-      object.password,
-      object.mobile_num,
-      object.occupation,
-    ],
-  ];
-  con.query(sql, [values], function (err, result) {
+function insert_into_tenanttable(req, res, next) {
+  var object=req.body;
+  var sql = `
+  INSERT INTO TenantTable VALUES(
+    '${object.first_name}',
+    '${object.last_name}',
+    '${object.email}',
+    '${object.password}',
+    '${object.mobile_num}',
+    '${object.occupation}'
+  );
+  `;
+  sql=remove_line_break(sql)
+  con.query(sql, function (err, result) {
     if (err) {
       console.log(err.message);
       next(err);
@@ -54,19 +55,21 @@ function insert_into_tenanttable(req, res, next, object) {
   });
 }
 
-function insert_into_bookingtable(req, res, next, object) {
-  var sql = "INSERT INTO BookingTable VALUES ?";
-  var values = [
-    [
-      object.tenant_id,
-      object.house_id,
-      object.booking_date,
-      object.peroid,
-      object.price,
-      object.agreement,
-    ],
-  ];
-  con.query(sql, [values], function (err, result) {
+function insert_into_bookingtable(req, res, next) {
+  var object=req.body;
+  var object=req.body;
+  var sql = `
+  INSERT INTO BookingTable VALUES(
+    '${object.tenant_id}',
+    '${object.house_id}',
+    '${object.booking_date}',
+    '${object.peroid}',
+    '${object.price}',
+    '${object.agreement}'
+  );
+  `;
+  sql=remove_line_break(sql)
+  con.query(sql, function (err, result) {
     if (err) {
       console.log(err.message);
       next(err);
@@ -78,22 +81,24 @@ function insert_into_bookingtable(req, res, next, object) {
   });
 }
 
-function insert_into_housetable(req, res, next, object) {
-  var sql = "INSERT INTO HouseTable VALUES ?";
-  var values = [
-    [
-      object.owner_id,
-      object.no_of_rooms,
-      object.rate,
-      object.upload_pics,
-      object.country,
-      object.state,
-      object.city,
-      object.address,
-      object.description,
-    ],
-  ];
-  con.query(sql, [values], function (err, result) {
+function insert_into_housetable(req, res, next) {
+  console.log(req)
+  var object=req.body;
+  var sql = `
+  INSERT INTO HouseTable VALUES(
+    '${object.owner_name}',
+    '${object.no_of_rooms}',
+    '${object.rate}',
+    '${object.image}',
+    '${object.country}',
+    '${object.state}',
+    '${object.city}',
+    '${object.address}',
+    '${object.description}'
+  );
+  `;
+  sql=remove_line_break(sql)
+  con.query(sql, function (err, result) {
     if (err) {
       console.log(err.message);
       next(err);
@@ -105,20 +110,21 @@ function insert_into_housetable(req, res, next, object) {
   });
 }
 
-function insert_into_memberstable(req, res, next, object) {
-  var sql = "INSERT INTO MembersTable VALUES ?";
-  var values = [
-    [
-      object.tenant_id,
-      object.first_name,
-      object.last_name,
-      object.occupation,
-      object.gender,
-      object.date_of_birth,
-      object.relationship_with_tenant,
-    ],
-  ];
-  con.query(sql, [values], function (err, result) {
+function insert_into_memberstable(req, res, next) {
+  var object=req.body;
+  var sql = `
+  INSERT INTO MembersTable VALUES(
+    '${object.tenant_id}',
+    '${object.first_name}',
+    '${object.last_name}',
+    '${object.occupation}',
+    '${object.gender}',
+    '${object.date_of_birth}',
+    '${object.relationship_with_tenant}'
+  );
+  `;
+  sql=remove_line_break(sql)
+  con.query(sql, function (err, result) {
     if (err) {
       console.log(err.message);
       next(err);
@@ -133,7 +139,7 @@ function insert_into_memberstable(req, res, next, object) {
 module.exports = {
   insert_into_ownertable,
   insert_into_tenanttable,
-  insert_into_bookingtable,
+  insert_into_housetable,
   insert_into_bookingtable,
   insert_into_memberstable,
 };

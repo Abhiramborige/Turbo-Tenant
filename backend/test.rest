@@ -1,4 +1,4 @@
-GET http://localhost:3000/database/insert_into_tenanttable
+POST http://localhost:3000/database/insert_into_ownertable
 Content-Type: application/json
 
 {

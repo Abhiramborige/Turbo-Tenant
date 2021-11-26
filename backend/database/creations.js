@@ -1,4 +1,4 @@
-var con = require("../database/config");
+var {con} = require("../database/config");
 const remove_line_break = require("../utility/utility");
 
 function create_ownertable(req, res, next) {
@@ -7,9 +7,9 @@ function create_ownertable(req, res, next) {
       name VARCHAR(50), 
       email VARCHAR(50),
       password VARCHAR(60),
-      mobile_num INT(10),
+      mobile_num VARCHAR(10),
       occupation VARCHAR(20),
-      num_houses INT(2),
+      num_houses VARCHAR(2),
       country VARCHAR(10),
       state VARCHAR(10),
       city VARCHAR(10),
@@ -21,7 +21,7 @@ function create_ownertable(req, res, next) {
       next(err);
     } else {
       console.log("OwnerTable created");
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      /* res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4)) */;
     }
   });
 }
@@ -32,8 +32,9 @@ function create_tenanttable(req, res, next) {
       first_name VARCHAR(255),
       last_name VARCHAR(255), 
       address VARCHAR(255),
+      password VARCHAR(60),
       email VARCHAR(50),
-      mobile_num INT(10),
+      mobile_num VARCHAR(10),
       occupation VARCHAR(20)
     );`;
   sql = remove_line_break(sql);
@@ -44,7 +45,7 @@ function create_tenanttable(req, res, next) {
     }
     else{
       console.log("TenantTable created");
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 40));
+      /* res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4)) */;
     }
   });
 }
@@ -56,8 +57,8 @@ function create_bookingtable(req, res, next) {
       house_id VARCHAR(255),
       dooking_date VARCHAR(255),
       peroid VARCHAR(255),
-      price INT(10),
-      agreement LONGBLOB
+      price VARCHAR(10),
+      agreement VARCHAR(100)
       );
     `;
   sql = remove_line_break(sql);
@@ -68,7 +69,7 @@ function create_bookingtable(req, res, next) {
     }
     else{
       console.log("BookingTable created");
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      /* res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4)) */;
     }
   });
 }
@@ -77,9 +78,9 @@ function create_housetable(req, res, next) {
   var sql = `
     CREATE TABLE IF NOT EXISTS HouseTable (
       owner_name VARCHAR(255), 
-      No_of_rooms VARCHAR(255),
-      rate INT(50),
-      image LONGBLOB,
+      no_of_rooms VARCHAR(255),
+      rate VARCHAR(50),
+      image VARCHAR(100),
       country VARCHAR(50),
       state VARCHAR(50),
       city VARCHAR(50),
@@ -95,7 +96,7 @@ function create_housetable(req, res, next) {
     }
     else{
       console.log("HouseTable created");
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      /* res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4)) */;
     }
   });
 }
@@ -119,7 +120,7 @@ function create_memberstable(req, res, next) {
       next(err);
     }
     else{
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      /* res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4)) */;
       console.log("MembersTable created");
     }
   });

@@ -19,7 +19,7 @@
     <div class="container" align="left">
       <div
         class="card"
-        style="width: 28rem; border-radius: 225px; background-color: lightpink;lightblue;margin-top: 100px;
+        style="width: 28rem; border-radius: 225px; background-color: lightpink;margin-top: 100px;
   margin-bottom: 100px;
   margin-right: 150px;
   margin-left: 450px;
@@ -29,17 +29,18 @@
         <div class="card-body">
           <h1 class="card-title" align="center"><b>Sign Up Here</b></h1>
           <br />
-          <form name="Form1" action="signup.php" method="get">
+          
             <b>Sign Up as: </b>
-            <select name="s" size="1">
-              <option value="owner">Owner</option>
+            <select name="s" id='option'>
+              <option value="owner" selected>Owner</option>
               <option value="tenant">Tenant</option>
             </select>
             <br /><br />
             <center>
-              <input type="submit" value="Submit" class="btn btn-success" />
+              <button value="Submit" class="btn btn-success" onclick="return submit()">Submit</button>
+              
             </center>
-          </form>
+          
           <center>
             <a href="signin.html" class="btn btn-success"
               ><b>Already Member Sign in here</b></a
@@ -49,5 +50,20 @@
         </div>
       </div>
     </div>
+    <script>
+      function submit(){
+        var select = document.getElementById('option');
+        var value = select.options[select.selectedIndex].value;
+        console.log(value)
+        if(value==="owner"){
+          window.location.href="http://127.0.0.1:5500/ownersignup.html"
+        }
+        if(value==="tenant"){
+          window.location.href="http://127.0.0.1:5500/tenantsignup.html";
+        }
+         
+
+      }
+    </script>
   </body>
 </html>
