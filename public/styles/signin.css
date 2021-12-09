@@ -1,0 +1,71 @@
+body {
+  margin: 0 auto;
+  background: url("../../img/h8.jpg");
+  background-size: 100%;
+}
+.container {
+  width: 200px;
+  height: 350px;
+  text-align: left;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.container img {
+  width: 550px;
+  height: 550px;
+  margin-top: -60px;
+}
+input[type="text"] {
+  margin-top: 30px;
+  height: 35px;
+  width: 200px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding-left: 40px;
+}
+
+.form-input::before {
+  content: "\f007";
+  font-family: "FontAwesome";
+  padding-left: 07px;
+  padding-top: 40px;
+  position: absolute;
+  font-size: 35px;
+  color: #2980b9;
+}
+
+.form-input:nth-child(2)::before {
+  content: "\f023";
+}
+
+.card_signin {
+  width: 28rem;
+  border-radius: 225px;
+  background-color: lightpink;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 450px;
+  background-color: lightpink;
+}
+.ownersignin_card {
+  width: 28rem;
+  border-radius: 155px;
+  background-color: lightblue;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 450px;
+  background-color: lightblue;
+}
+.tenantsignin_card {
+  width: 28rem;
+  border-radius: 155px;
+  background-color: lightblue;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 450px;
+  background-color: lightblue;
+}

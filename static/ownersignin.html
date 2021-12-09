@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Sign In</title>
+    <link rel="stylesheet" type="text/css" href="../public/styles/signin.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <div id="google_translate_element_id"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: "en" },
+        "google_translate_element_id"
+      );
+    }
+  </script>
+  <script
+    type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  ></script>
+
+  <body>
+    <div class="container" align="left">
+      <div class="ownersignin_card">
+        <br />
+        <div class="card-body">
+          <h1 class="card-title" align="center"><b>Sign In Here</b></h1>
+          <form
+            name="Form1"
+            action="http://localhost:3000/database/read_ownertable"
+            method="post"
+            ,
+            enctype="application/json"
+          >
+            <table align="left">
+              <tr>
+                <td><b>Email: </b></td>
+                <td><input type="email" name="email" value="" size="25" /></td>
+              </tr>
+              <br />
+              <tr>
+                <td><b>Password: </b></td>
+                <td>
+                  <input type="password" name="password" value="" size="25" />
+                </td>
+              </tr>
+            </table>
+            <br /><br /><br />
+            <center>
+              <br />
+              <input
+                type="submit"
+                value="Sign In"
+                class="btn btn-primary"
+                id=""
+              /><br />
+            </center>
+          </form>
+          <center>
+            <a href="signup.html" class="btn btn-primary"
+              ><b>New User Sign Up here</b></a
+            ><br /><br />
+          </center>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

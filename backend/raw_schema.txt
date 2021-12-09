@@ -24,3 +24,14 @@
   "address":"Plot 123, Streep of temple.",
   "description":"Good house"
 }
+{
+  "owner_name":"Ramu",
+  "no_of_rooms":4,
+  "rate":4,
+  "image":"D:\\MY Folder\\5th semester 3rd year\\IWP\\Project\\img\\h2.jpg",
+  "country":"India",
+  "state":"Karnataka",
+  "city":"Bangalore",
+  "address":"Plot 123, Streep of temple.",
+  "description":"Good house"
+}

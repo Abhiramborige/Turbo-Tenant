@@ -1,27 +1,34 @@
 const {con} = require("../database/config");
 
 function read_ownertable(req, res, next) {
-  var sql = "SELECT * FROM OwnerTable";
+  var object=req.body;
+  var sql = `SELECT * FROM OwnerTable WHERE email='${object.email}' AND password='${object.password}';`;
   con.query(sql, function (err, result, fields) {
     if (err) {
       console.log(err.message);
       next(err);
     }
+    else if(result.length==0){
+      res.status(201).send("<div>No user found 🙄! </div>");
+    }
     else{
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      res.render("home",{user_details: result[0]})
     }
   });
 }
 
 function read_tenanttable(req, res, next) {
-  var sql = "SELECT * FROM TenantTable";
+  var sql = `SELECT * FROM TenantTable WHERE email='${object.email}' AND password='${object.password}';`;
   con.query(sql, function (err, result, fields) {
     if (err) {
       console.log(err.message);
       next(err);
     }
+    else if(result.length==0){
+      res.status(201).send("<div>No user found 🙄! </div>");
+    }
     else{
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      res.render("home",{user_details: result[0]})
     }
   });
 }

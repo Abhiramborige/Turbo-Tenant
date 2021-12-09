@@ -1,16 +1,13 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles/signin.css" />
+    <link rel="stylesheet" type="text/css" href="../public/styles/signup.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    
   </head>
 
   <body>
@@ -18,12 +15,7 @@
     <br />
     <div class="container" align="left">
       <div
-        class="card"
-        style="width: 28rem; border-radius: 225px; background-color: lightpink;margin-top: 100px;
-  margin-bottom: 100px;
-  margin-right: 150px;
-  margin-left: 450px;
-  background-color: lightpink;"
+        class="card_signup"
       >
         <br />
         <div class="card-body">
@@ -38,9 +30,8 @@
             <br /><br />
             <center>
               <button value="Submit" class="btn btn-success" onclick="return submit()">Submit</button>
-              
             </center>
-          
+          <br>
           <center>
             <a href="signin.html" class="btn btn-success"
               ><b>Already Member Sign in here</b></a
@@ -50,20 +41,6 @@
         </div>
       </div>
     </div>
-    <script>
-      function submit(){
-        var select = document.getElementById('option');
-        var value = select.options[select.selectedIndex].value;
-        console.log(value)
-        if(value==="owner"){
-          window.location.href="http://127.0.0.1:5500/ownersignup.html"
-        }
-        if(value==="tenant"){
-          window.location.href="http://127.0.0.1:5500/tenantsignup.html";
-        }
-         
-
-      }
-    </script>
+    <script src="../javascript/signup.js"></script>
   </body>
 </html>

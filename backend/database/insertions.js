@@ -1,8 +1,8 @@
-const {con} = require("../database/config");
+const { con } = require("../database/config");
 const remove_line_break = require("../utility/utility");
 
 function insert_into_ownertable(req, res, next) {
-  var object=req.body;
+  var object = req.body;
   var sql = `
   INSERT INTO OwnerTable VALUES(
     '${object.name}',
@@ -17,21 +17,31 @@ function insert_into_ownertable(req, res, next) {
     '${object.address}'
   );
   `;
-  sql=remove_line_break(sql)
+  sql = remove_line_break(sql);
   con.query(sql, function (err, result) {
     if (err) {
       console.log(err.message);
       next(err);
-    }
-    else{
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
-      console.log("Number of records inserted: " + result.affectedRows);
+    } else {
+      res
+        .status(200)
+        .send(
+          "<div>" +
+            "Response received 🥳!<br>" +
+            JSON.stringify(result, null, 4) +
+            "<br>" +
+            "Number of records inserted: " +
+            result.affectedRows +
+            "<br>" +
+            "Go to <a href='http://127.0.0.1:5500/static/ownersignin.html'>Signin Page</a>." +
+            "</div>"
+        );
     }
   });
 }
 
 function insert_into_tenanttable(req, res, next) {
-  var object=req.body;
+  var object = req.body;
   var sql = `
   INSERT INTO TenantTable VALUES(
     '${object.first_name}',
@@ -42,22 +52,32 @@ function insert_into_tenanttable(req, res, next) {
     '${object.occupation}'
   );
   `;
-  sql=remove_line_break(sql)
+  sql = remove_line_break(sql);
   con.query(sql, function (err, result) {
     if (err) {
       console.log(err.message);
       next(err);
-    }
-    else{
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
-      console.log("Number of records inserted: " + result.affectedRows);
+    } else {
+      res
+        .status(200)
+        .send(
+          "<div>" +
+            "Response received 🥳!<br>" +
+            JSON.stringify(result, null, 4) +
+            "<br>" +
+            "Number of records inserted: " +
+            result.affectedRows +
+            "<br>" +
+            "Go to <a href='http://127.0.0.1:5500/static/tenantsignin.html'>Signin Page</a>." +
+            "</div>"
+        );
     }
   });
 }
 
 function insert_into_bookingtable(req, res, next) {
-  var object=req.body;
-  var object=req.body;
+  var object = req.body;
+  var object = req.body;
   var sql = `
   INSERT INTO BookingTable VALUES(
     '${object.tenant_id}',
@@ -68,22 +88,23 @@ function insert_into_bookingtable(req, res, next) {
     '${object.agreement}'
   );
   `;
-  sql=remove_line_break(sql)
+  sql = remove_line_break(sql);
   con.query(sql, function (err, result) {
     if (err) {
       console.log(err.message);
       next(err);
-    }
-    else{
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+    } else {
+      res
+        .status(200)
+        .send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
       console.log("Number of records inserted: " + result.affectedRows);
     }
   });
 }
 
 function insert_into_housetable(req, res, next) {
-  console.log(req)
-  var object=req.body;
+  console.log(req);
+  var object = req.body;
   var sql = `
   INSERT INTO HouseTable VALUES(
     '${object.owner_name}',
@@ -97,21 +118,22 @@ function insert_into_housetable(req, res, next) {
     '${object.description}'
   );
   `;
-  sql=remove_line_break(sql)
+  sql = remove_line_break(sql);
   con.query(sql, function (err, result) {
     if (err) {
       console.log(err.message);
       next(err);
-    }
-    else{
+    } else {
       console.log("Number of records inserted: " + result.affectedRows);
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      res
+        .status(200)
+        .send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
     }
   });
 }
 
 function insert_into_memberstable(req, res, next) {
-  var object=req.body;
+  var object = req.body;
   var sql = `
   INSERT INTO MembersTable VALUES(
     '${object.tenant_id}',
@@ -123,14 +145,15 @@ function insert_into_memberstable(req, res, next) {
     '${object.relationship_with_tenant}'
   );
   `;
-  sql=remove_line_break(sql)
+  sql = remove_line_break(sql);
   con.query(sql, function (err, result) {
     if (err) {
       console.log(err.message);
       next(err);
-    }
-    else{
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+    } else {
+      res
+        .status(200)
+        .send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
       console.log("Number of records inserted: " + result.affectedRows);
     }
   });

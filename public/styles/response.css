@@ -1,0 +1,13 @@
+div{
+  padding: 20px;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  width:min-content;
+  line-height: 1.2em;
+}
+body{
+  margin: 0 auto;
+  padding: 20px;
+  width: fit-content;
+}

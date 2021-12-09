@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  background: url("../img/h11.jpg");
+  background: url("../../img/h10.jpg");
   background-size: 100%;
 }
 .container {
@@ -43,4 +43,30 @@ input[type="text"] {
   position: fixed;
   top: 55%;
   left: 10%;
+}
+
+.card_signup {
+  width: 28rem;
+  border-radius: 225px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 450px;
+  background-color: lightpink;
+}
+.ownersignup_card {
+  width: 28rem;
+  border-radius: 85px;
+  background-color: #f0f5f5;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 450px;
+  background-color: lightgreen;
+}
+.tenantsignup_card {
+  width: 38rem;
+  border-radius: 75px;
+  padding-left: 20px;
+  background-color: lightyellow;
 }

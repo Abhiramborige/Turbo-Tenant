@@ -4,17 +4,13 @@
     <title>Turbo Tenant.🏰</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="styles/home.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/home.css" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
-    
   </head>
-  <body style="background:lightgreen;">
-    
-    
-    
+  <body style="background: lightgreen">
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -58,8 +54,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
               <a href="#">
-                <!-- User has to be replaced by embedded javascript code to retrive the logged in username -->
-                <span class="glyphicon glyphicon-user"></span>Hi User
+                <span class="glyphicon glyphicon-user"></span>Hi <%= user_details.name %>
               </a>
             </li>
             <li>
@@ -75,14 +70,14 @@
     <div class="container" style="margin-top: 5px">
       <h3>
         <!-- User has to be replaced by embedded javascript code to retrive the logged in username -->
-        <b><h1>Welcome User</h1></b><br /><br />
+        <b><h1>Welcome <%= user_details.name %></h1></b><br /><br />
       </h3>
       <div class="row">
         <div class="col-lg-3">
           <div class="card colo-md-4" style="width: 250px">
             <img
               class="card-img-top"
-              src="img/h1.jpg"
+              src="/img/h1.jpg"
               alt="Card image"
               width="250px;"
               height="190px;"
@@ -106,7 +101,7 @@
           <div class="card colo-md-4" style="width: 250px">
             <img
               class="card-img-top"
-              src="img/h2.jpg"
+              src="/img/h2.jpg"
               alt="Card image"
               width="250px;"
               height="190px;"
@@ -130,7 +125,7 @@
           <div class="card colo-md-4" style="width: 250px">
             <img
               class="card-img-top"
-              src="img/h3.jpg"
+              src="/img/h3.jpg"
               alt="Card image"
               width="250px;"
               height="190px;"
@@ -155,7 +150,7 @@
           <div class="card colo-md-4" style="width: 250px">
             <img
               class="card-img-top"
-              src="img/h4.jpg"
+              src="/img/h4.jpg"
               alt="Card image"
               width="250px;"
               height="190px;"
@@ -177,8 +172,5 @@
         </div>
       </div>
     </div>
-    
-    
   </body>
-  
 </html>

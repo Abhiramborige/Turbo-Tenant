@@ -45,8 +45,8 @@ router.post("/insert_into_bookingtable", insert_into_bookingtable);
 router.post("/insert_into_housetable", insert_into_housetable);
 router.post("/insert_into_memberstable", insert_into_memberstable);
 
-router.get("/read_ownertable", read_ownertable);
-router.get("/read_tenanttable", read_tenanttable);
+router.post("/read_ownertable", read_ownertable);
+router.post("/read_tenanttable", read_tenanttable);
 router.get("/read_bookingtable", read_bookingtable);
 router.get("/read_housetable", read_housetable);
 router.get("/read_memberstable", read_memberstable);

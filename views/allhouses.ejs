@@ -46,7 +46,7 @@ td{
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Houses <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="houses.php">Houses</a></li>
+            <li><a href="http://localhost:3000/database/read_housetable">Houses</a></li>
             <li><a href="rating.php">Rating</a></li>
           </ul>
         </li>
@@ -58,13 +58,13 @@ td{
             <li><a href="tenant.php">Tenants</a></li>
             <li><a href="members.php">Members</a></li>
           </ul></li>
-        <li><a href="booking.php">Booking</a></li>
+        <li><a href="http://127.0.0.1:5500/booking.html">Booking</a></li>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
          <li><a href="#"><span class="glyphicon glyphicon-user"></span>Hi <%=  %></a>
          </li>
-        <li><a href="index.html"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
+        <li><a href="http://127.0.0.1:5500/index.html"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
       </ul>
     </div>
   </div>
@@ -83,7 +83,6 @@ td{
         <th>Country</th>
         <th>Description</th>
         <th>Rate for rent</th>
-        <th>Pics of the house</th>
       </tr>
       <% for(var i=0; i<result.length; i++){ %>
         <tr>
@@ -114,7 +113,6 @@ td{
           <td>
             <%= result[i].rate %>
           </td>
-          <td><img src=`${result.image}` /></td>
         </tr>
         <% } %>
     </table>
