@@ -7,31 +7,41 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <br />
     <br />
     <div class="container" align="left">
-      <div
-        class="card_signup"
-      >
+      <div class="card_signup">
         <br />
         <div class="card-body">
           <h1 class="card-title" align="center"><b>Sign Up Here</b></h1>
           <br />
-          
-            <b>Sign Up as: </b>
-            <select name="s" id='option'>
-              <option value="owner" selected>Owner</option>
-              <option value="tenant">Tenant</option>
-            </select>
-            <br /><br />
-            <center>
-              <button value="Submit" class="btn btn-success" onclick="return submit()">Submit</button>
-            </center>
-          <br>
+
+          <b>Sign Up as: </b>
+          <select name="s" id="option">
+            <option value="owner" selected>Owner</option>
+            <option value="tenant">Tenant</option>
+          </select>
+          <br /><br />
+          <center>
+            <button
+              value="Submit"
+              class="btn btn-success"
+              onclick="return submit()"
+            >
+              Submit
+            </button>
+          </center>
+          <br />
           <center>
             <a href="signin.html" class="btn btn-success"
               ><b>Already Member Sign in here</b></a

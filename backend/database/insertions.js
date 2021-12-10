@@ -159,10 +159,35 @@ function insert_into_memberstable(req, res, next) {
   });
 }
 
+function insert_into_ratingtable(req, res, next) {
+  var object = req.body;
+  var sql = `
+  INSERT INTO MembersTable VALUES(
+    '${object.tenant_id}',
+    '${object.house_id}',
+    '${object.rating}',
+    '${object.comment}'
+  );
+  `;
+  sql = remove_line_break(sql);
+  con.query(sql, function (err, result) {
+    if (err) {
+      console.log(err.message);
+      next(err);
+    } else {
+      res
+        .status(200)
+        .send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      console.log("Number of records inserted: " + result.affectedRows);
+    }
+  });
+}
+
 module.exports = {
   insert_into_ownertable,
   insert_into_tenanttable,
   insert_into_housetable,
   insert_into_bookingtable,
   insert_into_memberstable,
+  insert_into_ratingtable
 };

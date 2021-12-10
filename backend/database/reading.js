@@ -54,7 +54,7 @@ function read_housetable(req, res, next) {
       next(err);
     }
     else{
-      res.render("all_houses", {result:result})
+      res.render("allhouses", {result:result})
     }
   });
 }
@@ -67,7 +67,20 @@ function read_memberstable(req, res, next) {
       next(err);
     }
     else{
-      res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4));
+      res.render("members", {result:result})
+    }
+  });
+}
+
+function read_ratingtable(req, res, next) {
+  var sql = "SELECT * FROM RatingTable";
+  con.query(sql, function (err, result, fields) {
+    if (err) {
+      console.log(err.message);
+      next(err);
+    }
+    else{
+      res.render("allrating", {result:result})
     }
   });
 }
@@ -78,4 +91,5 @@ module.exports = {
   read_bookingtable,
   read_housetable,
   read_memberstable,
+  read_ratingtable
 };

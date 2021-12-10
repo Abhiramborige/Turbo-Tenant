@@ -126,10 +126,30 @@ function create_memberstable(req, res, next) {
   });
 }
 
+function create_ratingtable(req, res, next) {
+  var sql = `
+    CREATE TABLE IF NOT EXISTS RatingTable (
+      tenant_id VARCHAR(255), 
+      house_id VARCHAR(255),
+      rating int(1),
+      comment varchar(255)
+    );`;
+  sql = remove_line_break(sql);
+  con.query(sql, function (err, result) {
+    if (err) {
+      next(err);
+    } else {
+      console.log("RatingTable created");
+      /* res.status(200).send("Response received 🥳!<br>" + JSON.stringify(result, null, 4)) */;
+    }
+  });
+}
+
 module.exports = {
   create_ownertable,
   create_tenanttable,
   create_bookingtable,
   create_housetable,
   create_memberstable,
+  create_ratingtable
 };
