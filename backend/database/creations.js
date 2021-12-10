@@ -10,9 +10,9 @@ function create_ownertable(req, res, next) {
       mobile_num VARCHAR(10),
       occupation VARCHAR(20),
       num_houses VARCHAR(2),
-      country VARCHAR(10),
-      state VARCHAR(10),
-      city VARCHAR(10),
+      country VARCHAR(50),
+      state VARCHAR(50),
+      city VARCHAR(50),
       address VARCHAR(50)
     );`;
   sql = remove_line_break(sql);

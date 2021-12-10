@@ -1,15 +1,17 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles/signup.css" />
+    <link rel="stylesheet" type="text/css" href="../public/styles/signup.css" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -30,30 +32,53 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="home.php">Home</a></li>
+            <li class="active"><a href="#">Home</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"
                 >Houses <span class="caret"></span
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="http://localhost:3000/database/read_housetable">Houses</a></li>
-                <li><a href="http://localhost:3000/database/read_ratingtable">Rating</a></li>
+                <li>
+                  <a href="http://localhost:3000/database/read_housetable"
+                    >Houses</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost:3000/database/read_ratingtable"
+                    >Rating</a
+                  >
+                </li>
               </ul>
             </li>
 
-            <li><a href="owner.php">Owners</a></li>
+            <li>
+              <a href="http://localhost:3000/database/read_allowners">Owners</a>
+            </li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"
                 >Tenants<span class="caret"></span
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="tenant.php">Tenants</a></li>
-                <li><a href="members.php">Members</a></li>
+                <li>
+                  <a href="http://localhost:3000/database/read_alltenants"
+                    >Tenants</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost:3000/database/read_memberstable"
+                    >Members</a
+                  >
+                </li>
               </ul>
             </li>
-            <li><a href="booking.php">Booking</a></li>
+            <li>
+              <a href="http://127.0.0.1:5500/static/dobooking.html">Booking</a>
+            </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#"> <span class="glyphicon glyphicon-user"></span>Hi </a>
+            </li>
             <li>
               <a href="http://127.0.0.1:5500/static/"
                 ><span class="glyphicon glyphicon-user"></span> Sign Out</a
@@ -68,7 +93,11 @@
       <br />
       <div
         class="card"
-        style="width: 43rem; border-radius: 155px; background-color:lightsteelblue;"
+        style="
+          width: 43rem;
+          border-radius: 155px;
+          background-color: lightsteelblue;
+        "
       >
         <br />
         <div class="card-body">
@@ -79,8 +108,9 @@
           <form
             name="Form2"
             action="http://localhost:3000/database/insert_into_housetable"
-            method="POST",
-            enctype='application/json'
+            method="POST"
+            ,
+            enctype="application/json"
           >
             <table>
               <tr>
@@ -89,7 +119,9 @@
               </tr>
               <tr>
                 <td><b>No of Rooms: </b></td>
-                <td><input type="number" name="no_of_rooms" value="" size="25" /></td>
+                <td>
+                  <input type="number" name="no_of_rooms" value="" size="25" />
+                </td>
               </tr>
               <tr>
                 <td><b>Rate: </b></td>
@@ -109,11 +141,15 @@
               </tr>
               <tr>
                 <td><b>Country: </b></td>
-                <td><input type="textbox" name="country" value="" size="25" /></td>
+                <td>
+                  <input type="textbox" name="country" value="" size="25" />
+                </td>
               </tr>
               <tr>
                 <td><b>State: </b></td>
-                <td><input type="textbox" name="state" value="" size="25" /></td>
+                <td>
+                  <input type="textbox" name="state" value="" size="25" />
+                </td>
               </tr>
               <tr>
                 <td><b>City: </b></td>
@@ -121,11 +157,15 @@
               </tr>
               <tr>
                 <td><b>Address: </b></td>
-                <td><input type="textbox" name="address" value="" size="25" /></td>
+                <td>
+                  <input type="textbox" name="address" value="" size="25" />
+                </td>
               </tr>
               <tr>
                 <td><b>Description: </b></td>
-                <td><input type="textbox" name="description" value="" size="25" /></td>
+                <td>
+                  <input type="textbox" name="description" value="" size="25" />
+                </td>
               </tr>
             </table>
             <br /><br />
