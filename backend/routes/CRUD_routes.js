@@ -22,7 +22,8 @@ const {
   read_housetable,
   read_ratingtable,
   read_alltenants,
-  read_allowners
+  read_allowners,
+  read_allbookings
 } = require("../database/reading");
 const {
   update_memberstable,
@@ -60,6 +61,7 @@ router.get("/read_memberstable", read_memberstable);
 router.get("/read_ratingtable", read_ratingtable);
 router.get("/read_alltenants", read_alltenants)
 router.get("/read_allowners", read_allowners);
+router.get("/read_allbookings", read_allbookings);
 
 router.get("/update_ownertable", update_ownertable);
 router.get("/update_tenanttable", update_tenanttable);

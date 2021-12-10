@@ -100,6 +100,19 @@ function read_allowners(req, res, next) {
   });
 }
 
+function read_allbookings(req, res, next) {
+  var sql = "SELECT * FROM BookingTable";
+  con.query(sql, function (err, result, fields) {
+    if (err) {
+      console.log(err.message);
+      next(err);
+    }
+    else{
+      res.render("allbookings", {result:result})
+    }
+  });
+}
+
 function read_ratingtable(req, res, next) {
   var sql = "SELECT * FROM RatingTable";
   con.query(sql, function (err, result, fields) {
@@ -121,5 +134,6 @@ module.exports = {
   read_memberstable,
   read_ratingtable,
   read_alltenants,
-  read_allowners
+  read_allowners,
+  read_allbookings
 };

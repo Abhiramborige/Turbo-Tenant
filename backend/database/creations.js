@@ -54,7 +54,7 @@ function create_bookingtable(req, res, next) {
     CREATE TABLE IF NOT EXISTS BookingTable(
       tenant_id VARCHAR(255), 
       house_id VARCHAR(255),
-      dooking_date VARCHAR(255),
+      booking_date VARCHAR(255),
       peroid VARCHAR(255),
       price VARCHAR(10),
       agreement VARCHAR(100)
