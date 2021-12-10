@@ -77,7 +77,6 @@ function insert_into_tenanttable(req, res, next) {
 
 function insert_into_bookingtable(req, res, next) {
   var object = req.body;
-  var object = req.body;
   var sql = `
   INSERT INTO BookingTable VALUES(
     '${object.tenant_id}',
@@ -162,7 +161,7 @@ function insert_into_memberstable(req, res, next) {
 function insert_into_ratingtable(req, res, next) {
   var object = req.body;
   var sql = `
-  INSERT INTO MembersTable VALUES(
+  INSERT INTO RatingTable VALUES(
     '${object.tenant_id}',
     '${object.house_id}',
     '${object.rating}',

@@ -31,9 +31,8 @@ function create_tenanttable(req, res, next) {
     CREATE TABLE IF NOT EXISTS TenantTable(
       first_name VARCHAR(255),
       last_name VARCHAR(255), 
-      address VARCHAR(255),
-      password VARCHAR(60),
       email VARCHAR(50),
+      password VARCHAR(60),
       mobile_num VARCHAR(10),
       occupation VARCHAR(20)
     );`;

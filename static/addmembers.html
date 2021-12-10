@@ -1,16 +1,23 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles/signup.css" />
+    <link rel="stylesheet" type="text/css" href="../public/styles/signin.css" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -31,32 +38,57 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="home.php">Home</a></li>
+            <li class="active"><a href="#">Home</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"
                 >Houses <span class="caret"></span
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="http://localhost:3000/database/read_housetable">Houses</a></li>
-                <li><a href="http://localhost:3000/database/read_ratingtable">Rating</a></li>
+                <li>
+                  <a href="http://localhost:3000/database/read_housetable"
+                    >Houses</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost:3000/database/read_ratingtable"
+                    >Rating</a
+                  >
+                </li>
               </ul>
             </li>
 
-            <li><a href="owner.php">Owners</a></li>
+            <li>
+              <a href="http://localhost:3000/database/read_allowners"
+                >Owners</a
+              >
+            </li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"
                 >Tenants<span class="caret"></span
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="tenant.php">Tenants</a></li>
-                <li><a href="members.php">Members</a></li>
+                <li>
+                  <a href="http://localhost:3000/database/read_alltenants"
+                    >Tenants</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost:3000/database/read_memberstable"
+                    >Members</a
+                  >
+                </li>
               </ul>
             </li>
-            <li><a href="booking.php">Booking</a></li>
+            <li>
+              <a href="http://127.0.0.1:5500/static/dobooking.html">Booking</a>
+            </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="index.html"
+              <a href="#"> <span class="glyphicon glyphicon-user"></span>Hi </a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/static/"
                 ><span class="glyphicon glyphicon-user"></span> Sign Out</a
               >
             </li>
@@ -69,54 +101,57 @@
       <br />
       <div
         class="card"
-        style="width: 55rem; border-radius: 235px; background-color: grey;"
+        style="width: 55rem; border-radius: 235px; background-color: grey"
       >
         <br />
         <div class="card-body">
-          <h1 class="card-title" style="text-align: center; 
-          margin-top: 50px;
-          margin-bottom: 10px;
-          margin-right: 50px;
-          margin-left: 20px; ">
- 
-  
+          <h1
+            class="card-title"
+            style="
+              text-align: center;
+              margin-top: 50px;
+              margin-bottom: 10px;
+              margin-right: 50px;
+              margin-left: 20px;
+            "
+          >
             <b>Add Member</b>
           </h1>
           <br />
           <form
             name="Form2"
-            action="addmembers.php"
-            method="get"
-            enctype="multipart/form-data"
+            action="http://localhost:3000/database/insert_into_memberstable"
+            method="post"
+            enctype="application/json"
           >
             <table>
               <tr>
                 <td><b>Tenant ID: </b></td>
-                <td><input type="number" name="t" value="" size="25" /></td>
+                <td><input type="number" name="tenant_id" value="" size="25" /></td>
               </tr>
               <tr>
                 <td><b>First Name: </b></td>
-                <td><input type="textbox" name="f" value="" size="25" /></td>
+                <td><input type="textbox" name="first_name" value="" size="25" /></td>
               </tr>
               <tr>
                 <td><b>Last Name: </b></td>
-                <td><input type="textbox" name="l" value="" size="25" /></td>
+                <td><input type="textbox" name="last_name" value="" size="25" /></td>
               </tr>
               <tr>
                 <td><b>Occupation: </b></td>
-                <td><input type="textbox" name="o" value="" size="25" /></td>
+                <td><input type="textbox" name="occupation" value="" size="25" /></td>
               </tr>
               <tr>
                 <td><b>Gender: </b></td>
-                <td><input type="textbox" name="g" value="" size="25" /></td>
+                <td><input type="textbox" name="gender" value="" size="25" /></td>
               </tr>
               <tr>
                 <td><b>Date of birth: </b></td>
-                <td><input type="date" name="d" value="" size="25" /></td>
+                <td><input type="date" name="date_of_birth" value="" size="25" /></td>
               </tr>
               <tr>
                 <td><b>Relationship with tenant: </b></td>
-                <td><input type="textbox" name="r" value="" size="25" /></td>
+                <td><input type="textbox" name="relationship_with_tenant" value="" size="25" /></td>
               </tr>
             </table>
             <br /><br />

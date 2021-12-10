@@ -18,6 +18,7 @@ function read_ownertable(req, res, next) {
 }
 
 function read_tenanttable(req, res, next) {
+  var object=req.body;
   var sql = `SELECT * FROM TenantTable WHERE email='${object.email}' AND password='${object.password}';`;
   con.query(sql, function (err, result, fields) {
     if (err) {
@@ -28,6 +29,7 @@ function read_tenanttable(req, res, next) {
       res.status(201).send("<div>No user found 🙄! </div>");
     }
     else{
+      result[0].name=result[0].first_name+" "+result[0].last_name;
       res.render("home",{user_details: result[0]})
     }
   });
@@ -72,6 +74,32 @@ function read_memberstable(req, res, next) {
   });
 }
 
+function read_alltenants(req, res, next) {
+  var sql = "SELECT * FROM TenantTable";
+  con.query(sql, function (err, result, fields) {
+    if (err) {
+      console.log(err.message);
+      next(err);
+    }
+    else{
+      res.render("tenants", {result:result})
+    }
+  });
+}
+
+function read_allowners(req, res, next) {
+  var sql = "SELECT * FROM OwnerTable";
+  con.query(sql, function (err, result, fields) {
+    if (err) {
+      console.log(err.message);
+      next(err);
+    }
+    else{
+      res.render("owners", {result:result})
+    }
+  });
+}
+
 function read_ratingtable(req, res, next) {
   var sql = "SELECT * FROM RatingTable";
   con.query(sql, function (err, result, fields) {
@@ -91,5 +119,7 @@ module.exports = {
   read_bookingtable,
   read_housetable,
   read_memberstable,
-  read_ratingtable
+  read_ratingtable,
+  read_alltenants,
+  read_allowners
 };

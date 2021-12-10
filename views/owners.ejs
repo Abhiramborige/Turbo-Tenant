@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>House Rental Management System</title>
+  <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="/styles/table.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<%- include("./nav") %>
+  
+<div class="container">
+  <table border="1" id="customers">
+    <tr>
+      <th>Owner ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Mobile No</th>
+      <th>Occupation</th>
+      <th>No of houses owned</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+    </tr>
+    <% for(var i=0; i<result.length; i++){ %>
+      <tr>
+        <td>
+          <%= i+1 %>
+        </td>
+        <td>
+          <%= result[i].name %>
+        </td>
+        <td>
+          <%= result[i].email %>
+        </td>
+        <td>
+          <%= result[i].mobile_num %>
+        </td>
+        <td>
+          <%= result[i].occupation %>
+        </td>
+        <td>
+          <%= result[i].num_houses %>
+        </td>
+        <td>
+          <%= result[i].address %>
+        </td>
+        <td>
+          <%= result[i].city %>
+        </td>
+        <td>
+          <%= result[i].state %>
+        </td>
+        <td>
+          <%= result[i].country %>
+        </td>
+      </tr>
+      <% } %>
+</table>
+</div>
+</body>
+</html>

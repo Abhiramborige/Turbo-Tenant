@@ -43,9 +43,14 @@ const connect = (req, res) => {
                     Database connected ! ✨<br>
                     Routes in the backend for handling the frontend:
                     <ul>
-                      <li>'/update/:tablename' ➡ Used to update a specific table based on parameter</li>
-                      <li>'/insert/:tablename' ➡ Used to insert into a specific table based on parameter</li>
-                      <li>'/read/:tablename' ➡ Used to read a specific table based on parameter</li>
+                      <li>'/' ➡ To establish the connection between server and MySQLdatabase.</li>
+                      <li>'/database/' ➡ To access all CRUD operations.</li>
+                      <ul>
+                        <li>'/create_all_tables' ➡ To initialize the project by creating all tables to store the data in MySQL. </li>
+                        <li>'/insert_into_<tablename>' ➡ Used to insert into a specific table based on query string</li>
+                        <li>'/read_<tablename>' ➡ Used to select data from a specific table based on query string</li>
+                        <li>'/update_<tablename>' ➡ Used to update a specific column of table based on query string</li>
+                      </ul>
                     </ul>
                   `);
             }

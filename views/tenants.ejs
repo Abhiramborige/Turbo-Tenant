@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Turbo Tenant.🏰</title>
+  <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="/styles/table.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<%- include("./nav") %>
+  
+<div class="container">
+  <a href="http://localhost:3000/database/read_memberstable" class='btn btn-primary'>Show Members</a>
+  <a href='http://127.0.0.1:5500/static/addmembers.html' class='btn btn-primary'>Add Members</a>
+  <a href='http://127.0.0.1:5500/static/addrating.html' class='btn btn-primary'>Add Ratings to houses</a><br><br>
+  <table border="1" id="customers">
+    <br><br>
+    <tr>
+      <th>Tenant ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Mobile No</th>
+      <th>Occupation</th>
+    </tr>
+    <% for(var i=0; i<result.length; i++){ %>
+      <tr>
+        <td>
+          <%= i+1 %>
+        </td>
+        <td>
+          <%= result[i].first_name %>
+        </td>
+        <td>
+          <%= result[i].last_name %>
+        </td>
+        <td>
+          <%= result[i].email %>
+        </td>
+        <td>
+          <%= result[i].mobile_num %>
+        </td>
+        <td>
+          <%= result[i].occupation %>
+        </td>
+      </tr>
+      <% } %>
+    </table>
+</div>
+</body>
+</html>
